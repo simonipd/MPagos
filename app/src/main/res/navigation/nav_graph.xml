@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mpagos.ui.main.presentation.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_selectedMethodFragment"
+            app:destination="@id/selectedBankFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_selectedMethodPayFragment"
+            app:destination="@id/selectedMethodPayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedBankFragment"
+        android:name="com.example.mpagos.ui.selectedBank.presentation.fragment.SelectedBankFragment"
+        tools:layout="@layout/fragment_selected_bank"
+        android:label="SelectedMethodFragment" />
+    <fragment
+        android:id="@+id/selectedMethodPayFragment"
+        android:name="com.example.mpagos.ui.methodPay.presentation.fragment.SelectedMethodPayFragment"
+        android:label="SelectedMethodPayFragment" >
+        <action
+            android:id="@+id/action_selectedMethodPayFragment_to_selectedMethodFragment"
+            app:destination="@id/selectedBankFragment" />
+    </fragment>
+</navigation>

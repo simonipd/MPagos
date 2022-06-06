@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MPagos</string>
+    <string name="api_key">444a9ef5-8a6b-429f-abdf-587639155d88</string>
+    <string name="msj_toast_invalid_message">Favor ingrese un monto válido</string>
+</resources>
