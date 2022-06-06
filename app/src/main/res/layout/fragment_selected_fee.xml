@@ -98,7 +98,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/button_background_selector"
         android:enabled="true"
-        android:text="Pagar"
+        android:text="@string/button_title_selected_fee"
         android:textAllCaps="false"
         android:textColor="@color/colorTextBoton"
         android:textSize="16sp"
