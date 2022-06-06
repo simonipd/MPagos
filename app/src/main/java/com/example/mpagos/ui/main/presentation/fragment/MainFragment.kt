@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentMainBinding
 import com.example.mpagos.ui.util.FunctionsUtils
+import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
+import com.example.mpagos.ui.util.FunctionsUtils.Companion.toastDefault
 import com.example.mpagos.ui.util.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,16 +38,26 @@ class MainFragment : Fragment() {
             _binding = FragmentMainBinding.inflate(inflater)
             binding?.root?.context.also { mContext = it!! }
             viewModel.getPaymentMethod()
+            observer()
             binding?.btnSave?.setOnClickListener {
                if (!binding!!.tieEditReceivesName.text!!.isEmpty()){
                    viewModel.setAmount(binding!!.tieEditReceivesName.text.toString())
                    findNavController().navigate(R.id.selectedMethodPayFragment)
                }else{
-                   FunctionsUtils.toastDefault(getString(R.string.msj_toast_invalid_message), requireActivity())
+                   toastDefault(getString(R.string.msj_toast_invalid_message), requireActivity())
                }
             }
         }
         return binding!!.root
+    }
+
+    private fun observer() {
+        viewLifecycleOwner.launchAndCollect(viewModel.state){
+            if (it.fee!=null){
+                toastDefault(getString(R.string.msj_toast_pay_successful),requireActivity())
+                viewModel.setFee(null)
+            }
+        }
     }
 
 }

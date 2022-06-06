@@ -57,7 +57,6 @@ class SelectedMethodPayFragment : Fragment() {
                     SelectedAdapter(binding!!.root.context, _listPaymentMethodElement!!)
                 binding!!.spinnerSelectedMethod.adapter = paymentAdapter
             }
-            Log.i("persistence()", it.paymentMethod.toString())
         }
     }
 

@@ -1,5 +1,6 @@
 package com.example.mpagos.ui.selectedFee.util
 
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
@@ -11,9 +12,9 @@ import com.example.mpagos.ui.selectedFee.presentation.fragment.SelectedFeeFragme
 fun SelectedFeeFragment.validateFee(
     paymentMethod: PaymentMethodElement?,
     bank: Bank?,
-    listFee: List<Fee>?
+    _listFee: List<Fee>?
 ) {
-    _listFee = listFee
+    listFee = _listFee
     val findListfee =
         listFee?.find { it.paymentMethodID.equals(paymentMethod?.id) && it.issuer.id.equals(bank?.id) }
     findListfee?.let {
@@ -36,7 +37,7 @@ fun SelectedFeeFragment.selectedItem() {
             id: Long
         ) {
             view?.let {
-                _listFee?.let {
+                listFee?.let {
                     viewModel.setFee(it[position])
                     binding!!.btnSave.isEnabled = true
                     parent?.setSelection(position)

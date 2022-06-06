@@ -6,6 +6,7 @@
     <string name="fragment_title_selected_fee">Seleccione una cuota</string>
     <string name="api_key">444a9ef5-8a6b-429f-abdf-587639155d88</string>
     <string name="msj_toast_invalid_message">Favor ingrese un monto válido</string>
+    <string name="msj_toast_pay_successful">¡Compra realiza con exito!</string>
     <string name="button_title_main">Ir a pagar</string>
     <string name="button_title_method_pay">Seleccionar</string>
     <string name="button_title_selected_bank">Seleccionar</string>

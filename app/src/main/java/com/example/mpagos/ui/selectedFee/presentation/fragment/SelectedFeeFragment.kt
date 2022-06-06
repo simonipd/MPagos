@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedFeeBinding
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
@@ -29,7 +30,7 @@ class SelectedFeeFragment : Fragment() {
     var _binding: FragmentSelectedFeeBinding? = null
     val binding get() = _binding
     lateinit var mContext: Context
-    var _listFee: List<Fee>? = null
+    var listFee: List<Fee>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +42,9 @@ class SelectedFeeFragment : Fragment() {
             viewModel.getFee()
             observer()
             selectedItem()
+            binding?.btnSave?.setOnClickListener {
+                findNavController().navigate(R.id.mainFragment)
+            }
         }
         return binding!!.root
     }
