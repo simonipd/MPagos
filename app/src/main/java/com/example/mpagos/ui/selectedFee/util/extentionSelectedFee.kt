@@ -13,6 +13,7 @@ fun SelectedFeeFragment.validateFee(
     bank: Bank?,
     listFee: List<Fee>?
 ) {
+    _listFee = listFee
     val findListfee =
         listFee?.find { it.paymentMethodID.equals(paymentMethod?.id) && it.issuer.id.equals(bank?.id) }
     findListfee?.let {
@@ -35,8 +36,8 @@ fun SelectedFeeFragment.selectedItem() {
             id: Long
         ) {
             view?.let {
-                _listBank?.let {
-                    viewModel.setBank(it[position])
+                _listFee?.let {
+                    viewModel.setFee(it[position])
                     binding!!.btnSave.isEnabled = true
                     parent?.setSelection(position)
                 }

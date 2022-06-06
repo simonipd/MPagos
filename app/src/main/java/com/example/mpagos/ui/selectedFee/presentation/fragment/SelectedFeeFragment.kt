@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedFeeBinding
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
+import com.example.mpagos.ui.selectedFee.domain.model.Fee
 import com.example.mpagos.ui.selectedFee.util.selectedItem
 import com.example.mpagos.ui.selectedFee.util.validateFee
 import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
@@ -28,7 +29,7 @@ class SelectedFeeFragment : Fragment() {
     var _binding: FragmentSelectedFeeBinding? = null
     val binding get() = _binding
     lateinit var mContext: Context
-    var _listBank: List<Bank>? = null
+    var _listFee: List<Fee>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -48,6 +48,10 @@ class MainViewModel @Inject constructor(
         _state.value = _state.value.copy(bank = _bank)
     }
 
+    fun setFee(_fee: Fee){
+        _state.value = _state.value.copy(fee = _fee)
+    }
+
     fun getPaymentMethod() {
         viewModelScope.launch {
             getPaymentMethodUseCase.invoke().let {
