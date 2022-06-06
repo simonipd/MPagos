@@ -57,13 +57,13 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="@drawable/spinner_outline">
 
                         <Spinner
                             android:id="@+id/spinnerSelectedMethod"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/dimen_50"
-                            android:background="@drawable/spinner_outline"
                             android:foreground="?attr/selectableItemBackground"
                             android:popupBackground="@color/white"
                             android:spinnerMode="dropdown" />

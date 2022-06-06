@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable-v24/button_blue.xml" value="0.201" />
         <entry key="app/src/main/res/drawable-v24/button_neutral.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/blue_outline.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/spinner_outline.xml" value="0.285" />
         <entry key="app/src/main/res/font/open_sans.xml" value="0.37222222222222223" />
         <entry key="app/src/main/res/font/open_sans_semibold.xml" value="0.37222222222222223" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.396875" />
