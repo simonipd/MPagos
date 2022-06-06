@@ -3,8 +3,9 @@ package com.example.mpagos.ui.selectedFee.di
 import android.app.Application
 import com.example.mpagos.R
 import com.example.mpagos.ui.selectedBank.data.remote.BankApi
-import com.example.mpagos.ui.selectedBank.data.repository.BankRepository
-import com.example.mpagos.ui.selectedBank.data.repository.BankRepositoryImp
+import com.example.mpagos.ui.selectedFee.data.remote.FeeApi
+import com.example.mpagos.ui.selectedFee.data.repository.FeeRepository
+import com.example.mpagos.ui.selectedFee.data.repository.FeeRepositoryImp
 import com.example.mpagos.ui.util.ApiServiceFactory
 import dagger.Module
 import dagger.Provides
@@ -12,7 +13,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-/*
 @Module
 @InstallIn(SingletonComponent::class)
 class AppModule {
@@ -30,17 +30,17 @@ class AppModule {
 
     @Provides
     fun provideRepository(
-        api: BankApi,
+        api: FeeApi,
         @ApiKey apiKey: String
-    ): BankRepository {
-        return BankRepositoryImp(api, apiKey)
+    ): FeeRepository {
+        return FeeRepositoryImp(api, apiKey)
     }
 
     @Provides
-    fun provideApiService(@ApiUrl apiUrl: String): BankApi {
+    fun provideApiService(@ApiUrl apiUrl: String): FeeApi {
         return ApiServiceFactory.build(
-            BankApi::class.java,
+            FeeApi::class.java,
             apiUrl
         )
     }
-}*/
+}

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">MPagos</string>
+    <string name="fragment_title_enter_amount">Ingrese monto de compra</string>
+    <string name="fragment_title_selected_method_pay">Seleccione metodo de pago</string>
+    <string name="fragment_title_selected_bank">Seleccione un banco</string>
+    <string name="fragment_title_selected_fee">Seleccione una cuota</string>
     <string name="api_key">444a9ef5-8a6b-429f-abdf-587639155d88</string>
     <string name="msj_toast_invalid_message">Favor ingrese un monto válido</string>
 </resources>

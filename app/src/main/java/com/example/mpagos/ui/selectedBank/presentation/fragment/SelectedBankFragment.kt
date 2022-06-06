@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedBankBinding
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
 import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
@@ -39,6 +41,9 @@ class SelectedBankFragment : Fragment() {
             viewModel.getBank()
             observer()
             selectedItem()
+            binding?.btnSave?.setOnClickListener {
+                findNavController().navigate(R.id.selectedFeeFragment)
+            }
         }
         return binding!!.root
     }
@@ -66,6 +71,7 @@ class SelectedBankFragment : Fragment() {
                     _listBank?.let {
                         viewModel.setBank(it[position])
                         binding!!.btnSave.isEnabled = true
+                        parent?.setSelection(position)
                     }
                 }
             }

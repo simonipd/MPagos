@@ -79,7 +79,7 @@
                             android:maxLines="1"
                             android:paddingStart="@dimen/dimen_10"
                             android:paddingEnd="@dimen/dimen_10"
-                            android:textColorHint="@color/smu_black_neutral"
+                            android:textColorHint="@color/meli_black_neutral"
                             android:textSize="16sp"
                             app:boxBackgroundColor="@android:color/transparent" />
 
@@ -94,7 +94,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="7dp"
                     android:text="text_error_edit_who_receives_name"
-                    android:textColor="@color/smu_red"
+                    android:textColor="@color/meli_red"
                     android:textSize="@dimen/dimen_12"
                     android:visibility="gone"
                     app:layout_constraintStart_toStartOf="@+id/linearLayout2"
@@ -118,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="text_error_edit_who_receives_last_name"
-                    android:textColor="@color/smu_red"
+                    android:textColor="@color/meli_red"
                     android:textSize="@dimen/dimen_12"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -131,7 +131,7 @@
 
     </ScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="45dp"

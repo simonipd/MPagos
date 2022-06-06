@@ -8,11 +8,8 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.mpagos.ui.main.presentation.fragment.MainFragment"
-        android:label="fragment_main"
+        android:label="@string/fragment_title_enter_amount"
         tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_selectedMethodFragment"
-            app:destination="@id/selectedBankFragment" />
         <action
             android:id="@+id/action_mainFragment_to_selectedMethodPayFragment"
             app:destination="@id/selectedMethodPayFragment" />
@@ -21,13 +18,21 @@
         android:id="@+id/selectedBankFragment"
         android:name="com.example.mpagos.ui.selectedBank.presentation.fragment.SelectedBankFragment"
         tools:layout="@layout/fragment_selected_bank"
-        android:label="SelectedMethodFragment" />
+        android:label="@string/fragment_title_selected_bank" >
+        <action
+            android:id="@+id/action_selectedBankFragment_to_selectedFeeFragment"
+            app:destination="@id/selectedFeeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/selectedMethodPayFragment"
         android:name="com.example.mpagos.ui.methodPay.presentation.fragment.SelectedMethodPayFragment"
-        android:label="SelectedMethodPayFragment" >
+        android:label="@string/fragment_title_selected_method_pay" >
         <action
             android:id="@+id/action_selectedMethodPayFragment_to_selectedMethodFragment"
             app:destination="@id/selectedBankFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/selectedFeeFragment"
+        android:name="com.example.mpagos.ui.selectedFee.presentation.fragment.SelectedFeeFragment"
+        android:label="@string/fragment_title_selected_fee" />
 </navigation>
