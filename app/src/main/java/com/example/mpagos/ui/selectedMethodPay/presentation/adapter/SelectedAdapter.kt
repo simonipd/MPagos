@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.methodPay.presentation.adapter
+package com.example.mpagos.ui.selectedMethodPay.presentation.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

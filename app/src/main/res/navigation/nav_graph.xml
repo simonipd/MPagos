@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectedMethodPayFragment"
-        android:name="com.example.mpagos.ui.methodPay.presentation.fragment.SelectedMethodPayFragment"
+        android:name="com.example.mpagos.ui.selectedMethodPay.presentation.fragment.SelectedMethodPayFragment"
         android:label="@string/fragment_title_selected_method_pay" >
         <action
             android:id="@+id/action_selectedMethodPayFragment_to_selectedMethodFragment"

@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.methodPay.presentation.fragment
+package com.example.mpagos.ui.selectedMethodPay.presentation.fragment
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedMethodPayBinding
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
-import com.example.mpagos.ui.methodPay.presentation.adapter.SelectedAdapter
+import com.example.mpagos.ui.selectedMethodPay.presentation.adapter.SelectedAdapter
 import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
 import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint

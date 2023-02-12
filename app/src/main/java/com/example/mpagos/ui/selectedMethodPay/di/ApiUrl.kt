@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.methodPay.di
+package com.example.mpagos.ui.selectedMethodPay.di
 
 import javax.inject.Qualifier
 

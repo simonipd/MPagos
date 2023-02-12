@@ -1,10 +1,10 @@
-package com.example.mpagos.ui.methodPay.di
+package com.example.mpagos.ui.selectedMethodPay.di
 
 import android.app.Application
 import com.example.mpagos.R
-import com.example.mpagos.ui.methodPay.data.remote.PayApi
-import com.example.mpagos.ui.methodPay.data.repository.PaymentRepository
-import com.example.mpagos.ui.methodPay.data.repository.PaymentRepositoryImp
+import com.example.mpagos.ui.selectedMethodPay.data.remote.PayApi
+import com.example.mpagos.ui.selectedMethodPay.data.repository.PaymentRepository
+import com.example.mpagos.ui.selectedMethodPay.data.repository.PaymentRepositoryImp
 import com.example.mpagos.ui.util.ApiServiceFactory
 import dagger.Module
 import dagger.Provides

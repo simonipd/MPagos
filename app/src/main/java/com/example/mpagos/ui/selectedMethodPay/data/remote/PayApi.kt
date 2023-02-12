@@ -1,7 +1,6 @@
-package com.example.mpagos.ui.methodPay.data.remote
+package com.example.mpagos.ui.selectedMethodPay.data.remote
 
 import com.example.mpagos.ui.main.data.entity.PaymentMethodElementEntity
-import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
 

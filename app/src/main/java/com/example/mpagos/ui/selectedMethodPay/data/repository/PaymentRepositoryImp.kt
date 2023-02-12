@@ -1,6 +1,6 @@
-package com.example.mpagos.ui.methodPay.data.repository
+package com.example.mpagos.ui.selectedMethodPay.data.repository
 
-import com.example.mpagos.ui.methodPay.data.remote.PayApi
+import com.example.mpagos.ui.selectedMethodPay.data.remote.PayApi
 import com.example.mpagos.ui.main.data.reporitory.mapper.paymentMethodElementEntityToDomain
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import javax.inject.Inject
