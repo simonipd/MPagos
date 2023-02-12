@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.util.presentation.property
+package com.example.mpagos.util.presentation.property
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.channels.Channel

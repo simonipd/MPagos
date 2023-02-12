@@ -12,9 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedBankBinding
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
-import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
+import com.example.mpagos.util.FunctionsUtils.Companion.launchAndCollect
 import com.example.mpagos.ui.selectedBank.presentation.adapter.SelectedAdapter
-import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
+import com.example.mpagos.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 

@@ -12,8 +12,8 @@ import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedMethodPayBinding
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.selectedMethodPay.presentation.adapter.SelectedAdapter
-import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
-import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
+import com.example.mpagos.util.FunctionsUtils.Companion.launchAndCollect
+import com.example.mpagos.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

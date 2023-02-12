@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.util
+package com.example.mpagos.util
 
 import android.app.Activity
 import android.widget.Toast

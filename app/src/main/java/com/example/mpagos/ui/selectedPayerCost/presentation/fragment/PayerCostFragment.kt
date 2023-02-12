@@ -14,8 +14,8 @@ import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
 import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
 import com.example.mpagos.ui.selectedPayerCost.util.selectedItem
 import com.example.mpagos.ui.selectedPayerCost.util.validateFee
-import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
-import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
+import com.example.mpagos.util.FunctionsUtils.Companion.launchAndCollect
+import com.example.mpagos.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 

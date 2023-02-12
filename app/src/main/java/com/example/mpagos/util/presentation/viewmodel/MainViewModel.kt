@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.util.presentation.viewmodel
+package com.example.mpagos.util.presentation.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel

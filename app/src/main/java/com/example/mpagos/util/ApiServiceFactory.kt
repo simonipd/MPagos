@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.util
+package com.example.mpagos.util
 
 
 import okhttp3.OkHttpClient

@@ -5,7 +5,7 @@ import com.example.mpagos.R
 import com.example.mpagos.ui.selectedMethodPay.data.remote.PayApi
 import com.example.mpagos.ui.selectedMethodPay.data.repository.PaymentRepository
 import com.example.mpagos.ui.selectedMethodPay.data.repository.PaymentRepositoryImp
-import com.example.mpagos.ui.util.ApiServiceFactory
+import com.example.mpagos.util.ApiServiceFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

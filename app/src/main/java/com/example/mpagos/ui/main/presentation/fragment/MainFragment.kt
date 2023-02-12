@@ -10,9 +10,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentMainBinding
-import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
-import com.example.mpagos.ui.util.FunctionsUtils.Companion.toastDefault
-import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
+import com.example.mpagos.util.FunctionsUtils.Companion.launchAndCollect
+import com.example.mpagos.util.FunctionsUtils.Companion.toastDefault
+import com.example.mpagos.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 

@@ -5,7 +5,7 @@ import com.example.mpagos.R
 import com.example.mpagos.ui.selectedPayerCost.data.remote.PayerCostApi
 import com.example.mpagos.ui.selectedPayerCost.data.repository.PayerCostRepository
 import com.example.mpagos.ui.selectedPayerCost.data.repository.PayerCostRepositoryImp
-import com.example.mpagos.ui.util.ApiServiceFactory
+import com.example.mpagos.util.ApiServiceFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
