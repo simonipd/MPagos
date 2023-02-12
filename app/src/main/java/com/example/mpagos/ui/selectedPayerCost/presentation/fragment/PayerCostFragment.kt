@@ -33,7 +33,6 @@ class PayerCostFragment : Fragment() {
     var listFee: List<PayerCostResponse>? = null
     var payerCosts: List<PayerCost>? = null
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
