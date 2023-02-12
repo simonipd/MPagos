@@ -4,14 +4,14 @@ import android.view.View
 import android.widget.AdapterView
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
-import com.example.mpagos.ui.selectedPayerCost.domain.model.Fee
+import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
 import com.example.mpagos.ui.selectedPayerCost.presentation.adapter.SelectedAdapter
 import com.example.mpagos.ui.selectedPayerCost.presentation.fragment.PayerCostFragment
 
 fun PayerCostFragment.validateFee(
     paymentMethod: PaymentMethodElement?,
     bank: Bank?,
-    _listFee: List<Fee>?
+    _listFee: List<PayerCostResponse>?
 ) {
     listFee = _listFee
     val findListfee =

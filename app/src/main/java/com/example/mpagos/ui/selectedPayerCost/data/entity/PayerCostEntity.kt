@@ -1,6 +1,6 @@
 package com.example.mpagos.ui.selectedPayerCost.data.entity
 
-data class FeeEntity (
+data class PayerCostResponseEntity (
     val payment_method_id: String,
     val payment_type_id: String,
     val issuer: IssuerEntity,

@@ -7,7 +7,7 @@ import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.main.domain.usecase.GetPaymentMethodUseCase
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
 import com.example.mpagos.ui.selectedBank.domain.usecase.GetBankUseCase
-import com.example.mpagos.ui.selectedPayerCost.domain.model.Fee
+import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
 import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
 import com.example.mpagos.ui.selectedPayerCost.domain.usecase.GetPayerCostUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,7 +34,7 @@ class MainViewModel @Inject constructor(
         var payerCost: PayerCost? = null,
         var listPaymentMethodElement: List<PaymentMethodElement>? = null,
         var listBank: List<Bank>? = null,
-        var listFee: List<Fee>? = null
+        var listFee: List<PayerCostResponse>? = null
     )
 
     fun setAmount(_amount: String) {

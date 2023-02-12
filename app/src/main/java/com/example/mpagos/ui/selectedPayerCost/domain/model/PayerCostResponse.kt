@@ -1,6 +1,6 @@
 package com.example.mpagos.ui.selectedPayerCost.domain.model
 
-data class Fee (
+data class PayerCostResponse (
     val paymentMethodID: String,
     val paymentTypeID: String,
     val issuer: Issuer,

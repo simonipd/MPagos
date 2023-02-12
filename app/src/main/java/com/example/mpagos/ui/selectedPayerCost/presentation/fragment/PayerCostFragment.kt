@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedFeeBinding
-import com.example.mpagos.ui.selectedPayerCost.domain.model.Fee
+import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
 import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
 import com.example.mpagos.ui.selectedPayerCost.util.selectedItem
 import com.example.mpagos.ui.selectedPayerCost.util.validateFee
@@ -30,7 +30,7 @@ class PayerCostFragment : Fragment() {
     var _binding: FragmentSelectedFeeBinding? = null
     val binding get() = _binding
     lateinit var mContext: Context
-    var listFee: List<Fee>? = null
+    var listFee: List<PayerCostResponse>? = null
     var payerCosts: List<PayerCost>? = null
 
 

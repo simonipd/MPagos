@@ -1,15 +1,15 @@
 package com.example.mpagos.ui.selectedPayerCost.data.repository.mapper
 
-import com.example.mpagos.ui.selectedPayerCost.data.entity.FeeEntity
+import com.example.mpagos.ui.selectedPayerCost.data.entity.PayerCostResponseEntity
 import com.example.mpagos.ui.selectedPayerCost.data.entity.IssuerEntity
 import com.example.mpagos.ui.selectedPayerCost.data.entity.PayerCostEntity
-import com.example.mpagos.ui.selectedPayerCost.domain.model.Fee
+import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
 import com.example.mpagos.ui.selectedPayerCost.domain.model.Issuer
 import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
 
 
-fun FeeEntity.bankEntityToDomain(): Fee =
-    Fee(
+fun PayerCostResponseEntity.bankEntityToDomain(): PayerCostResponse =
+    PayerCostResponse(
         payment_method_id,
         payment_type_id,
         issuer.issuerEntityToDomain(),
