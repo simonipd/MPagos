@@ -1,7 +1,6 @@
 package com.example.mpagos.ui.methodPay.presentation.fragment
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ import com.example.mpagos.databinding.FragmentSelectedMethodPayBinding
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.methodPay.presentation.adapter.SelectedAdapter
 import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
-import com.example.mpagos.ui.util.viewmodel.MainViewModel
+import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

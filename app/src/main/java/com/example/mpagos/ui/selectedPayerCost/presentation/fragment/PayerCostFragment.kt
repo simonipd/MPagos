@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.main.presentation.fragment
+package com.example.mpagos.ui.selectedPayerCost.presentation.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -9,53 +9,51 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
-import com.example.mpagos.databinding.FragmentMainBinding
+import com.example.mpagos.databinding.FragmentSelectedFeeBinding
+import com.example.mpagos.ui.selectedPayerCost.domain.model.Fee
+import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
+import com.example.mpagos.ui.selectedPayerCost.util.selectedItem
+import com.example.mpagos.ui.selectedPayerCost.util.validateFee
 import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
-import com.example.mpagos.ui.util.FunctionsUtils.Companion.toastDefault
 import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class MainFragment : Fragment() {
+class PayerCostFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = PayerCostFragment()
     }
 
     val viewModel: MainViewModel by activityViewModels()
-    var _binding : FragmentMainBinding? = null
+    var _binding: FragmentSelectedFeeBinding? = null
     val binding get() = _binding
     lateinit var mContext: Context
+    var listFee: List<Fee>? = null
+    var payerCosts: List<PayerCost>? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         if (_binding == null) {
-            _binding = FragmentMainBinding.inflate(inflater)
+            _binding = FragmentSelectedFeeBinding.inflate(inflater)
             binding?.root?.context.also { mContext = it!! }
-            viewModel.getPaymentMethod()
+            viewModel.getFee()
             observer()
+            selectedItem()
             binding?.btnSave?.setOnClickListener {
-               if (!binding!!.tieEditReceivesName.text!!.isEmpty()){
-                   viewModel.setAmount(binding!!.tieEditReceivesName.text.toString())
-                   findNavController().navigate(R.id.selectedMethodPayFragment)
-               }else{
-                   toastDefault(getString(R.string.msj_toast_invalid_message), requireActivity())
-               }
+                findNavController().navigate(R.id.mainFragment)
             }
         }
         return binding!!.root
     }
 
     private fun observer() {
-        viewLifecycleOwner.launchAndCollect(viewModel.state){
-            if (it.payerCost!=null){
-                toastDefault(getString(R.string.msj_toast_pay_successful),requireActivity())
-                viewModel.setPayerCost(null)
-            }
+        viewLifecycleOwner.launchAndCollect(viewModel.state) {
+            validateFee(it.paymentMethod, it.bank, it.listFee)
         }
     }
-
 }

@@ -14,7 +14,7 @@ import com.example.mpagos.databinding.FragmentSelectedBankBinding
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
 import com.example.mpagos.ui.util.FunctionsUtils.Companion.launchAndCollect
 import com.example.mpagos.ui.selectedBank.presentation.adapter.SelectedAdapter
-import com.example.mpagos.ui.util.viewmodel.MainViewModel
+import com.example.mpagos.ui.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 

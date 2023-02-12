@@ -33,6 +33,6 @@
     </fragment>
     <fragment
         android:id="@+id/selectedFeeFragment"
-        android:name="com.example.mpagos.ui.selectedFee.presentation.fragment.SelectedFeeFragment"
+        android:name="com.example.mpagos.ui.selectedPayerCost.presentation.fragment.PayerCostFragment"
         android:label="@string/fragment_title_selected_fee" />
 </navigation>
