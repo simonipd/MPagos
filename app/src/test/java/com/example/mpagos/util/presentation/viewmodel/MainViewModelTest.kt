@@ -1,26 +1,32 @@
 package com.example.mpagos.util.presentation.viewmodel
 
+import CoroutinesTestRule
 import app.cash.turbine.test
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.main.domain.usecase.GetPaymentMethodUseCase
 import com.example.mpagos.ui.selectedBank.domain.usecase.GetBankUseCase
 import com.example.mpagos.ui.selectedPayerCost.domain.usecase.GetPayerCostUseCase
-import junit.framework.Assert.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.kotlin.mock
+import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
 
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
 class MainViewModelTest {
+
+    @get:Rule
+    val coroutinesTestRule = CoroutinesTestRule()
 
     @Mock
     lateinit var getPaymentMethodUseCase: GetPaymentMethodUseCase
@@ -34,7 +40,25 @@ class MainViewModelTest {
 
     private lateinit var vm: MainViewModel
 
-    private val listPaymentMethodElement = listOf<PaymentMethodElement>()
+    private var samplePaymentMethod = PaymentMethodElement(
+        id = "",
+        name = "name",
+        paymentTypeId = "paymentTypeId",
+        status = "status",
+        secureThumbnail = "https",
+        thumbnail = "https",
+        deferredCapture = "deferredCapture",
+        settings = mock(),
+        additionalInfoNeeded = mock(),
+        minAllowedAmount = 1,
+        maxAllowedAmount = 1,
+        accreditationTime = 1,
+        financialInstitutions = mock(),
+        processingModes = mock()
+    )
+
+    private val listPaymentMethodElement = listOf(samplePaymentMethod.copy(id = "111"))
+
 
     @Before
     suspend fun setup() {
@@ -43,13 +67,25 @@ class MainViewModelTest {
     }
 
     @Test
-    fun getBanks() = runTest {
+    fun getPaymentMethod() = runTest {
+        vm.getPaymentMethod()
+
         vm.state.test {
             assertEquals(MainViewModel.UiState(), awaitItem())
-            assertEquals(MainViewModel.UiState(listPaymentMethodElement = listPaymentMethodElement), awaitItem())
+            assertEquals(
+                MainViewModel.UiState(listPaymentMethodElement = listPaymentMethodElement),
+                awaitItem()
+            )
             cancel()
         }
     }
 
+    @Test
+    fun `Payments are requested when UI screen starts`() = runTest {
+        vm.getPaymentMethod()
+        runCurrent()
+
+        verify(getPaymentMethodUseCase).invoke()
+    }
 
 }
