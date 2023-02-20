@@ -42,12 +42,12 @@ class MainViewModelTest {
 
     private var samplePaymentMethod = PaymentMethodElement(
         id = "",
-        name = "name",
-        paymentTypeId = "paymentTypeId",
-        status = "status",
-        secureThumbnail = "https",
-        thumbnail = "https",
-        deferredCapture = "deferredCapture",
+        name = "Argencard",
+        paymentTypeId = "credit_card",
+        status = "active",
+        secureThumbnail = "https://http2.mlstatic.com/storage/logos-api-admin/d7e55980-f3be-11eb-8e0d-6f4af49bf82e-xl@2x.png",
+        thumbnail = "https://http2.mlstatic.com/storage/logos-api-admin/d7e55980-f3be-11eb-8e0d-6f4af49bf82e-xl@2x.png",
+        deferredCapture = "supported",
         settings = mock(),
         additionalInfoNeeded = mock(),
         minAllowedAmount = 1,
@@ -57,7 +57,7 @@ class MainViewModelTest {
         processingModes = mock()
     )
 
-    private val listPaymentMethodElement = listOf(samplePaymentMethod.copy(id = "111"))
+    private val listPaymentMethodElement = listOf(samplePaymentMethod.copy(id = "argencard"))
 
 
     @Before
