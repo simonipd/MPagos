@@ -3,7 +3,6 @@ package com.example.mpagos.util.presentation.viewmodel
 import CoroutinesTestRule
 import app.cash.turbine.test
 import com.example.mpagos.testShared.samplePaymentMethod
-import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.main.domain.usecase.GetPaymentMethodUseCase
 import com.example.mpagos.ui.selectedBank.domain.usecase.GetBankUseCase
 import com.example.mpagos.ui.selectedPayerCost.domain.usecase.GetPayerCostUseCase
@@ -17,7 +16,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
-import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
 
@@ -48,6 +46,10 @@ class MainViewModelTest {
         vm = MainViewModel(getPaymentMethodUseCase, getBankUseCase, getPayerCost)
     }
 
+    //****************************************************************
+    /// Get PaymentMethod
+    //****************************************************************
+
     @Test
     fun getPaymentMethod() = runTest {
         vm.getPaymentMethod()
@@ -68,6 +70,58 @@ class MainViewModelTest {
         runCurrent()
 
         verify(getPaymentMethodUseCase).invoke()
+    }
+
+    //****************************************************************
+    /// Get banks
+    //****************************************************************
+
+    @Test
+    fun getBank() = runTest {
+        vm.getBank()
+
+        vm.state.test {
+            assertEquals(MainViewModel.UiState(), awaitItem())
+            assertEquals(
+                MainViewModel.UiState(bank = null),
+                awaitItem()
+            )
+            cancel()
+        }
+    }
+
+    @Test
+    fun `Banks are requested`() = runTest {
+        vm.getBank()
+        runCurrent()
+
+        verify(getBankUseCase).invoke()
+    }
+
+    //****************************************************************
+    /// Get banks
+    //****************************************************************
+
+    @Test
+    fun getQuota() = runTest {
+        vm.getQuota()
+
+        vm.state.test {
+            assertEquals(MainViewModel.UiState(), awaitItem())
+            assertEquals(
+                MainViewModel.UiState(bank = null),
+                awaitItem()
+            )
+            cancel()
+        }
+    }
+
+    @Test
+    fun `Quota are requested`() = runTest {
+        vm.getBank()
+        runCurrent()
+
+        verify(getPayerCost).invoke()
     }
 
 }

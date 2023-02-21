@@ -77,7 +77,7 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun getFee() {
+    fun getQuota() {
         viewModelScope.launch {
             _state.value.amount?.let { _amount ->
                 _state.value.paymentMethod?.let { _paymentMethod ->

@@ -40,7 +40,7 @@ class PayerCostFragment : Fragment() {
         if (_binding == null) {
             _binding = FragmentSelectedFeeBinding.inflate(inflater)
             binding?.root?.context.also { mContext = it!! }
-            viewModel.getFee()
+            viewModel.getQuota()
             observer()
             selectedItem()
             binding?.btnSave?.setOnClickListener {
