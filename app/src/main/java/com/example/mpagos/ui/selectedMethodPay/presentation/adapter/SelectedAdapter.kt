@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.mpagos.R
 import com.example.mpagos.databinding.ItemDataBinding
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
+import com.example.mpagos.util.FunctionsUtils.Companion.loadUrl
 
 
 class SelectedAdapter(val context: Context, var dataSource: List<PaymentMethodElement>) :
@@ -31,13 +32,7 @@ class SelectedAdapter(val context: Context, var dataSource: List<PaymentMethodEl
             vh = view.tag as ItemHolder
         }
         vh.label.text = dataSource.get(position).name
-
-        Glide.with(vh.binding.root)
-            .load(dataSource.get(position).secureThumbnail)
-            .error(R.drawable.gif_loader)
-            .fallback(R.drawable.gif_loader)
-            .into(vh.img)
-
+        vh.img.loadUrl(dataSource.get(position).secureThumbnail)
         return view
     }
 

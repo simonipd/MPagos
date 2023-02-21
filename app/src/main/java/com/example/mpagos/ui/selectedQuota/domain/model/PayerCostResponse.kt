@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.selectedPayerCost.domain.model
+package com.example.mpagos.ui.selectedQuota.domain.model
 
 data class PayerCostResponse (
     val paymentMethodID: String,

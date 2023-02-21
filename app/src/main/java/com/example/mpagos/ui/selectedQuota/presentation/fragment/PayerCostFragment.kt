@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.selectedPayerCost.presentation.fragment
+package com.example.mpagos.ui.selectedQuota.presentation.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -10,10 +10,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mpagos.R
 import com.example.mpagos.databinding.FragmentSelectedFeeBinding
-import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
-import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
-import com.example.mpagos.ui.selectedPayerCost.util.selectedItem
-import com.example.mpagos.ui.selectedPayerCost.util.validateFee
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCostResponse
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCost
+import com.example.mpagos.ui.selectedQuota.util.selectedItem
+import com.example.mpagos.ui.selectedQuota.util.validateFee
 import com.example.mpagos.util.FunctionsUtils.Companion.launchAndCollect
 import com.example.mpagos.util.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint

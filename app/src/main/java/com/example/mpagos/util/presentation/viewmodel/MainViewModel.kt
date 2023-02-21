@@ -7,9 +7,9 @@ import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.main.domain.usecase.GetPaymentMethodUseCase
 import com.example.mpagos.ui.selectedBank.domain.model.Bank
 import com.example.mpagos.ui.selectedBank.domain.usecase.GetBankUseCase
-import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
-import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
-import com.example.mpagos.ui.selectedPayerCost.domain.usecase.GetPayerCostUseCase
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCostResponse
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCost
+import com.example.mpagos.ui.selectedQuota.domain.usecase.GetQuotaUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -21,7 +21,7 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val getPaymentMethodUseCase: GetPaymentMethodUseCase,
     private val getBankUseCase: GetBankUseCase,
-    private val getFeeUseCase: GetPayerCostUseCase
+    private val getFeeUseCase: GetQuotaUseCase
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(UiState())

@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.selectedPayerCost.presentation.adapter
+package com.example.mpagos.ui.selectedQuota.presentation.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,8 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.mpagos.R
 import com.example.mpagos.databinding.ItemDataBinding
-import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCost
+import com.example.mpagos.util.FunctionsUtils.Companion.loadUrl
 
 
 class SelectedAdapter(val context: Context, var dataSource: List<PayerCost>, var image: String) : BaseAdapter() {
@@ -30,13 +31,7 @@ class SelectedAdapter(val context: Context, var dataSource: List<PayerCost>, var
             vh = view.tag as ItemHolder
         }
         vh.label.text = dataSource.get(position).recommendedMessage
-
-        Glide.with(vh.binding.root)
-            .load(image)
-            .error(R.drawable.gif_loader)
-            .fallback(R.drawable.gif_loader)
-            .into(vh.img)
-
+        vh.img.loadUrl(image)
         return view
     }
 

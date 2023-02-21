@@ -1,11 +1,11 @@
-package com.example.mpagos.ui.selectedPayerCost.data.repository.mapper
+package com.example.mpagos.ui.selectedQuota.data.repository.mapper
 
-import com.example.mpagos.ui.selectedPayerCost.data.entity.PayerCostResponseEntity
-import com.example.mpagos.ui.selectedPayerCost.data.entity.IssuerEntity
-import com.example.mpagos.ui.selectedPayerCost.data.entity.PayerCostEntity
-import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCostResponse
-import com.example.mpagos.ui.selectedPayerCost.domain.model.Issuer
-import com.example.mpagos.ui.selectedPayerCost.domain.model.PayerCost
+import com.example.mpagos.ui.selectedQuota.data.entity.PayerCostResponseEntity
+import com.example.mpagos.ui.selectedQuota.data.entity.IssuerEntity
+import com.example.mpagos.ui.selectedQuota.data.entity.PayerCostEntity
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCostResponse
+import com.example.mpagos.ui.selectedQuota.domain.model.Issuer
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCost
 
 
 fun PayerCostResponseEntity.bankEntityToDomain(): PayerCostResponse =

@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.selectedPayerCost.data.entity
+package com.example.mpagos.ui.selectedQuota.data.entity
 
 data class PayerCostResponseEntity (
     val payment_method_id: String,

@@ -5,7 +5,7 @@ import app.cash.turbine.test
 import com.example.mpagos.testShared.samplePaymentMethod
 import com.example.mpagos.ui.main.domain.usecase.GetPaymentMethodUseCase
 import com.example.mpagos.ui.selectedBank.domain.usecase.GetBankUseCase
-import com.example.mpagos.ui.selectedPayerCost.domain.usecase.GetPayerCostUseCase
+import com.example.mpagos.ui.selectedQuota.domain.usecase.GetQuotaUseCase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
@@ -34,7 +34,7 @@ class MainViewModelTest {
     lateinit var getBankUseCase: GetBankUseCase
 
     @Mock
-    lateinit var getPayerCost: GetPayerCostUseCase
+    lateinit var getPayerCost: GetQuotaUseCase
 
     private lateinit var vm: MainViewModel
 

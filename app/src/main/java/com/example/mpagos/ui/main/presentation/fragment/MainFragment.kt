@@ -24,8 +24,8 @@ class MainFragment : Fragment() {
     }
 
     val viewModel: MainViewModel by activityViewModels()
-    var _binding : FragmentMainBinding? = null
-    val binding get() = _binding
+    private var _binding : FragmentMainBinding? = null
+    private val binding get() = _binding
     lateinit var mContext: Context
 
     override fun onCreateView(
@@ -50,8 +50,8 @@ class MainFragment : Fragment() {
     }
 
     private fun observer() {
-        viewLifecycleOwner.launchAndCollect(viewModel.state){
-            if (it.payerCost!=null){
+        viewLifecycleOwner.launchAndCollect(viewModel.state){ response ->
+            if (response.payerCost!=null){
                 toastDefault(getString(R.string.msj_toast_pay_successful),requireActivity())
                 viewModel.setPayerCost(null)
             }

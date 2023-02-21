@@ -1,11 +1,11 @@
-package com.example.mpagos.ui.selectedPayerCost.data.remote
+package com.example.mpagos.ui.selectedQuota.data.remote
 
-import com.example.mpagos.ui.selectedPayerCost.data.entity.PayerCostResponseEntity
+import com.example.mpagos.ui.selectedQuota.data.entity.PayerCostResponseEntity
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-interface PayerCostApi {
+interface QuotaApi {
 
     @GET("payment_methods/installments")
     suspend fun getFee(
