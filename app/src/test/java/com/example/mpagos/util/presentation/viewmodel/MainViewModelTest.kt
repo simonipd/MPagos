@@ -2,6 +2,7 @@ package com.example.mpagos.util.presentation.viewmodel
 
 import CoroutinesTestRule
 import app.cash.turbine.test
+import com.example.mpagos.testShared.samplePaymentMethod
 import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
 import com.example.mpagos.ui.main.domain.usecase.GetPaymentMethodUseCase
 import com.example.mpagos.ui.selectedBank.domain.usecase.GetBankUseCase
@@ -37,28 +38,9 @@ class MainViewModelTest {
     @Mock
     lateinit var getPayerCost: GetPayerCostUseCase
 
-
     private lateinit var vm: MainViewModel
 
-    private var samplePaymentMethod = PaymentMethodElement(
-        id = "",
-        name = "Argencard",
-        paymentTypeId = "credit_card",
-        status = "active",
-        secureThumbnail = "https://http2.mlstatic.com/storage/logos-api-admin/d7e55980-f3be-11eb-8e0d-6f4af49bf82e-xl@2x.png",
-        thumbnail = "https://http2.mlstatic.com/storage/logos-api-admin/d7e55980-f3be-11eb-8e0d-6f4af49bf82e-xl@2x.png",
-        deferredCapture = "supported",
-        settings = mock(),
-        additionalInfoNeeded = mock(),
-        minAllowedAmount = 1,
-        maxAllowedAmount = 1,
-        accreditationTime = 1,
-        financialInstitutions = mock(),
-        processingModes = mock()
-    )
-
     private val listPaymentMethodElement = listOf(samplePaymentMethod.copy(id = "argencard"))
-
 
     @Before
     suspend fun setup() {
