@@ -8,12 +8,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.mpagos"
         minSdk 23
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -30,11 +30,18 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
     buildFeatures{
         viewBinding true
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
     }
 }
 
@@ -57,6 +64,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
     //rx java
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    testImplementation 'junit:junit:4.13.2'
     // Hilt
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     implementation "com.google.dagger:hilt-android:$hilt_version"
@@ -72,4 +80,17 @@ dependencies {
 
     //Lib lifecycle-runtime
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.0-rc01"
+
+    //Mockito
+    implementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
+    implementation "org.mockito:mockito-inline:4.4.0"
+
+    //coroutunes
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+
+    implementation "app.cash.turbine:turbine:0.7.0"
+
+    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.5"
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
 }

@@ -1,10 +1,10 @@
-package com.example.mpagos.ui.selectedMethodPay.di
+package com.example.mpagos.ui.selectedQuota.di
 
 import android.app.Application
 import com.example.mpagos.R
-import com.example.mpagos.ui.selectedMethodPay.data.remote.PayApi
-import com.example.mpagos.ui.selectedMethodPay.data.repository.PaymentRepository
-import com.example.mpagos.ui.selectedMethodPay.data.repository.PaymentRepositoryImp
+import com.example.mpagos.ui.selectedQuota.data.remote.QuotaApi
+import com.example.mpagos.ui.selectedQuota.data.repository.QuotaRepository
+import com.example.mpagos.ui.selectedQuota.data.repository.QuotaRepositoryImp
 import com.example.mpagos.util.ApiServiceFactory
 import dagger.Module
 import dagger.Provides
@@ -29,16 +29,16 @@ class AppModule {
 
     @Provides
     fun provideRepository(
-        api: PayApi,
+        api: QuotaApi,
         @ApiKey apiKey: String
-    ): PaymentRepository {
-        return PaymentRepositoryImp(api, apiKey)
+    ): QuotaRepository {
+        return QuotaRepositoryImp(api, apiKey)
     }
 
     @Provides
-    fun provideApiService(@ApiUrl apiUrl: String): PayApi {
+    fun provideApiService(@ApiUrl apiUrl: String): QuotaApi {
         return ApiServiceFactory.build(
-            PayApi::class.java,
+            QuotaApi::class.java,
             apiUrl
         )
     }

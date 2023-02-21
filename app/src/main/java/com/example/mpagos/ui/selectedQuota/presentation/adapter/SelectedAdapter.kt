@@ -1,4 +1,4 @@
-package com.example.mpagos.ui.selectedMethodPay.presentation.adapter
+package com.example.mpagos.ui.selectedQuota.presentation.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,12 +10,11 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.example.mpagos.R
 import com.example.mpagos.databinding.ItemDataBinding
-import com.example.mpagos.ui.main.domain.model.PaymentMethodElement
+import com.example.mpagos.ui.selectedQuota.domain.model.PayerCost
 import com.example.mpagos.util.FunctionsUtils.Companion.loadUrl
 
 
-class SelectedAdapter(val context: Context, var dataSource: List<PaymentMethodElement>) :
-    BaseAdapter() {
+class SelectedAdapter(val context: Context, var dataSource: List<PayerCost>, var image: String) : BaseAdapter() {
 
     private val inflater: LayoutInflater =
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -31,8 +30,8 @@ class SelectedAdapter(val context: Context, var dataSource: List<PaymentMethodEl
             view = convertView
             vh = view.tag as ItemHolder
         }
-        vh.label.text = dataSource.get(position).name
-        vh.img.loadUrl(dataSource.get(position).secureThumbnail)
+        vh.label.text = dataSource.get(position).recommendedMessage
+        vh.img.loadUrl(image)
         return view
     }
 

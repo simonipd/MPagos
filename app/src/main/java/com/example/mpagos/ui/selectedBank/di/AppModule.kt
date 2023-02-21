@@ -5,7 +5,7 @@ import com.example.mpagos.R
 import com.example.mpagos.ui.selectedBank.data.remote.BankApi
 import com.example.mpagos.ui.selectedBank.data.repository.BankRepository
 import com.example.mpagos.ui.selectedBank.data.repository.BankRepositoryImp
-import com.example.mpagos.ui.util.ApiServiceFactory
+import com.example.mpagos.util.ApiServiceFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
